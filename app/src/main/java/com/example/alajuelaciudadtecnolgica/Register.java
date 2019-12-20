@@ -61,6 +61,7 @@ public class Register extends AppCompatActivity {
         String demail = email.getText().toString();
         String dpass = pass.getText().toString();
         String dcheck_pass = check_pass.getText().toString();
+        Boolean dcheckbox = notifications.isSelected();
 
         if (!dpass.equals(dcheck_pass)){
             Toast.makeText(Register.this, "No coinciden contraseñas", Toast.LENGTH_SHORT).show();
@@ -72,6 +73,7 @@ public class Register extends AppCompatActivity {
                         JSONObject jsonAnswer = new JSONObject(response);
                         boolean correct = jsonAnswer.getBoolean("success");
                         if (correct){
+                            Toast.makeText(Register.this,"Usuario creado correctamente",Toast.LENGTH_SHORT);
                             Intent c = new Intent(Register.this, Login.class);
                             Register.this.startActivity(c);
                             Register.this.finish();
@@ -86,7 +88,7 @@ public class Register extends AppCompatActivity {
                     }
                 }
             };
-            RegisterRequest r = new RegisterRequest(dname, dlast1, dlast2, ddate, demail, dpass, answer);
+            RegisterRequest r = new RegisterRequest(dname, dlast1, dlast2, ddate, demail, dpass, dcheckbox, answer);
             RequestQueue queue = Volley.newRequestQueue(Register.this);
             queue.add(r);
         }
