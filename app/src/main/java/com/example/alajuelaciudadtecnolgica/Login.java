@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 
@@ -49,6 +50,7 @@ public class Login extends AppCompatActivity {
                         Login.this.startActivity(menu);
                         Login.this.finish();
                     }else{
+                        Toast.makeText(Login.this,"El usuario no existe o su contraseña es incorrecta",Toast.LENGTH_SHORT);
                     AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
                     alert.setMessage("Fallo en inicio de sesión").setNegativeButton("Reintentar", null)
                             .create()

@@ -21,6 +21,7 @@ public class RegisterRequest extends StringRequest {
         parameters.put("fecha_nacimiento",date + "");
         parameters.put("correo",email + "");
         parameters.put("contrasena",pass + "");
+        parameters.put("notificaciones",notifications + "");
 
     }
 
