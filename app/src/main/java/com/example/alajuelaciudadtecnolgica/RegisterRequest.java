@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterRequest extends StringRequest {
-    private static final String route = "";
+    private static final String route = "https://ciudadtecnologicaalajuela.000webhostapp.com/register.php";
     private Map<String, String> parameters;
 
     public RegisterRequest(String name, String last1, String last2, Date date, String email, String pass,Boolean notifications, Response.Listener<String> listener){

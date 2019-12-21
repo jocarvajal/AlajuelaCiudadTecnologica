@@ -15,15 +15,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Login extends AppCompatActivity {
-    EditText edemail = (EditText)findViewById(R.id.edmail);
-    EditText edpassword = (EditText)findViewById(R.id.edpass);
+    private EditText edemail ;
+    private EditText edpassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView register = (TextView)findViewById(R.id.tregister);
-
+        edemail = (EditText)findViewById(R.id.edmail);
+        edpassword = (EditText)findViewById(R.id.edpass);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
