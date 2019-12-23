@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,16 +53,18 @@ public class Login extends AppCompatActivity {
                         Login.this.finish();
                     }else{
                         Toast.makeText(Login.this,"El usuario no existe o su contraseña es incorrecta",Toast.LENGTH_SHORT);
-                    AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
-                    alert.setMessage("Fallo en inicio de sesión").setNegativeButton("Reintentar", null)
-                            .create()
-                            .show();
+                        AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
+                        alert.setMessage("Fallo en inicio de sesión").setNegativeButton("Reintentar", null)
+                                .create()
+                                .show();
                 }
                 }catch (JSONException e){
                     e.getMessage();
                 }
             }
         };
-
+        LoginRequest r = new LoginRequest(user, password,answer);
+        RequestQueue queue = Volley.newRequestQueue(Login.this);
+        queue.add(r);
     }
 }
