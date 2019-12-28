@@ -26,6 +26,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView register = (TextView)findViewById(R.id.tregister);
+        TextView guest = (TextView)findViewById(R.id.tinvi);
         edemail = (EditText)findViewById(R.id.edmail);
         edpassword = (EditText)findViewById(R.id.edpass);
         register.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +34,14 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent register_activity = new Intent(Login.this, Register.class);
                 Login.this.startActivity(register_activity);
+                finish();
+            }
+        });
+        guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menu_activity = new Intent(Login.this, Menu.class);
+                Login.this.startActivity(menu_activity);
                 finish();
             }
         });
