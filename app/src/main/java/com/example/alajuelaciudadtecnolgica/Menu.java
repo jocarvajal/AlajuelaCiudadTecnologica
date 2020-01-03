@@ -36,6 +36,31 @@ public class Menu extends AppCompatActivity {
         Menu.this.finish();
     }
 
+    public void  show_local(View v){
+        Intent i = new Intent(Menu.this, ShowMap.class);
+        Menu.this.startActivity(i);
+        Menu.this.finish();
+    }
+
+    public void  show_turist(View v){
+        Intent i = new Intent(Menu.this, ShowMap.class);
+        Menu.this.startActivity(i);
+        Menu.this.finish();
+    }
+
+    public void  show_all(View v){
+        Intent i = new Intent(Menu.this, ShowMap.class);
+        Menu.this.startActivity(i);
+        Menu.this.finish();
+    }
+
+    public void  show_institutions(View v){
+        Intent i = new Intent(Menu.this, ShowMap.class);
+        Menu.this.startActivity(i);
+        Menu.this.finish();
+    }
+
+
     public void  returning(View v){
         Intent i = new Intent(Menu.this, Login.class);
         Menu.this.startActivity(i);
