@@ -85,7 +85,7 @@ public class Register extends AppCompatActivity {
                         JSONObject jsonAnswer = new JSONObject(response);
                         boolean correct = jsonAnswer.getBoolean("success");
                         if (correct){
-                            Toast.makeText(Register.this,"Usuario creado correctamente",Toast.LENGTH_SHORT);
+                            Toast.makeText(Register.this,"Usuario creado correctamente",Toast.LENGTH_SHORT).show();
                             Intent c = new Intent(Register.this, Login.class);
                             Register.this.startActivity(c);
                             Register.this.finish();

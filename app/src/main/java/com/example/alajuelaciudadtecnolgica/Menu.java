@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class Menu extends AppCompatActivity {
 
@@ -25,6 +26,8 @@ public class Menu extends AppCompatActivity {
             i.putExtra("email",email);
             Menu.this.startActivity(i);
             Menu.this.finish();
+        }else{
+            Toast.makeText(Menu.this,"No disponible en modo usuario",Toast.LENGTH_SHORT).show();
         }
 
     }

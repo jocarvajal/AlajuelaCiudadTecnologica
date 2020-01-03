@@ -65,7 +65,7 @@ public class Login extends AppCompatActivity {
                         Login.this.startActivity(menu);
                         Login.this.finish();
                     }else{
-                        Toast.makeText(Login.this,"El usuario no existe o su contraseña es incorrecta",Toast.LENGTH_SHORT);
+                        Toast.makeText(Login.this,"El usuario no existe o su contraseña es incorrecta",Toast.LENGTH_SHORT).show();
                         AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
                         alert.setMessage("Fallo en inicio de sesión").setNegativeButton("Reintentar", null)
                                 .create()
