@@ -14,6 +14,12 @@ public class RegisterRequest extends StringRequest {
 
     public RegisterRequest(String name, String last1, String last2, Date date, String email, String pass,Boolean notifications, Response.Listener<String> listener){
         super(Method.POST, route, listener, null);
+        int not;
+        if(notifications){
+            not = 1;
+        }else{
+            not = 0;
+        }
         parameters = new HashMap<>();
         parameters.put("nombre",name + "");
         parameters.put("apellido1",last1 + "");
@@ -21,7 +27,7 @@ public class RegisterRequest extends StringRequest {
         parameters.put("fecha_nacimiento",date + "");
         parameters.put("correo",email + "");
         parameters.put("contrasena",pass + "");
-        parameters.put("notificaciones",notifications + "");
+        parameters.put("notificaciones",not + "");
 
     }
 
