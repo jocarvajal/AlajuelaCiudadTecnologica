@@ -21,6 +21,10 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
 public class Register extends AppCompatActivity {
 
     private EditText name;
@@ -33,6 +37,7 @@ public class Register extends AppCompatActivity {
     private Button btn_register;
     private Button btn_back;
     private CheckBox notifications;
+    private Pattern pattern;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,9 @@ public class Register extends AppCompatActivity {
         btn_register = (Button)findViewById(R.id.btnacept);
         btn_back = (Button)findViewById(R.id.btnback);
         notifications = (CheckBox)findViewById(R.id.cbnoti);
+        pattern = Pattern
+                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
     }
 
 
@@ -63,8 +71,12 @@ public class Register extends AppCompatActivity {
         String dcheck_pass = check_pass.getText().toString();
         Boolean dcheckbox = notifications.isSelected();
 
+        Matcher matcher = pattern.matcher(demail);
+
         if (!dpass.equals(dcheck_pass)){
             Toast.makeText(Register.this, "No coinciden contraseñas", Toast.LENGTH_SHORT).show();
+        }else if(!matcher.find()){
+            Toast.makeText(Register.this, "Formato de correo incorrecto", Toast.LENGTH_SHORT).show();
         }else{
             Response.Listener<String> answer = new Response.Listener<String>(){
                 @Override
