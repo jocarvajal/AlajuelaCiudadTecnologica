@@ -8,8 +8,10 @@
     $correo    = $_POST["correo"];
     $contrasena   = $_POST["contrasena"];
     $notificaciones = $_POST["notificaciones"];
+    $insertfecha = date("Y-m-d", strtotime($fecha_nacimiento));
+    
     $statement = mysqli_prepare($con,"INSERT INTO usuario (nombre,apellido1,apellido2,fecha_nacimiento,correo,contrasena,notificaciones) VALUES (?,?,?,?,?,?,?)");
-    mysqli_stmt_bind_param($statement, "ssis", $nombre, $apellido1, $apellido2, $fecha_nacimiento, $correo, $contrasena, $notificaciones);
+    mysqli_stmt_bind_param($statement, "ssssssi", $nombre, $apellido1, $apellido2, $insertfecha, $correo, $contrasena, $notificaciones);
     mysqli_stmt_execute($statement);
 
     $response = array();
