@@ -41,6 +41,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent menu_activity = new Intent(Login.this, Menu.class);
+                menu_activity.putExtra("invitado",true);
                 Login.this.startActivity(menu_activity);
                 finish();
             }
@@ -58,10 +59,13 @@ public class Login extends AppCompatActivity {
                     boolean ok = jsonResponse.getBoolean("success");
                     if(ok){
                         Intent menu = new Intent(Login.this, Menu.class);
+                        menu.putExtra("invitado",false);
+                        menu.putExtra("email",edemail.getText().toString());
+                        menu.putExtra("contrasena",edpassword.getText().toString());
                         Login.this.startActivity(menu);
                         Login.this.finish();
                     }else{
-                        Toast.makeText(Login.this,"El usuario no existe o su contraseña es incorrecta",Toast.LENGTH_SHORT);
+                        Toast.makeText(Login.this,"El usuario no existe o su contraseña es incorrecta",Toast.LENGTH_SHORT).show();
                         AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
                         alert.setMessage("Fallo en inicio de sesión").setNegativeButton("Reintentar", null)
                                 .create()

@@ -26,6 +26,10 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import java.util.ArrayList;
+import java.util.Map;
+
+import android.preference.PreferenceManager;
+import org.osmdroid.config.Configuration;
 
 public class ShowMap extends AppCompatActivity {
 
@@ -39,51 +43,45 @@ public class ShowMap extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_map);
+        Context ctx = getApplicationContext();
+        Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
         if (tengoPermisoEscritura()){
+
+
+            //setting this before the layout is inflated is a good idea
             GeoPoint alajuela = new GeoPoint(10.0162497, -84.2116318);
-            myOpenMapView = findViewById(R.id.openmapview);
+
+            myOpenMapView = (MapView) findViewById(R.id.openmapview);
+            myOpenMapView.setTileSource(TileSourceFactory.MAPNIK);
             myOpenMapView.setBuiltInZoomControls(true);
+            myOpenMapView.setMultiTouchControls(true);
+
             myMapController = (MapController)myOpenMapView.getController();
             myMapController.setCenter(alajuela);
-            myMapController.setZoom(6);
+            myMapController.setZoom(9.5);
 
-            myOpenMapView.setMultiTouchControls(true);
-            final MyLocationNewOverlay myLocationoverlay = new MyLocationNewOverlay(new GpsMyLocationProvider(getApplicationContext()), myOpenMapView);
-            myOpenMapView.getOverlays().add(myLocationoverlay); //No añadir si no quieres una marca
-            myLocationoverlay.enableMyLocation();
-            myLocationoverlay.runOnFirstFix(new Runnable() {
-                public void run() {
-                    myMapController.animateTo(myLocationoverlay.getMyLocation());
-                }
-            });
 
-            /////////////////////////////////////////
-            // Añadir un punto en el mapa
-            puntos.add(new OverlayItem("Alajuela", "Alajuela Centro", alajuela));
-            refrescaPuntos();
-
-            /////////////////////////////////////////
-            // Detectar cambios de ubicación mediante un listener (OSMUpdateLocation)
-            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-            OSMUpdateLocation detectaPosicion = new OSMUpdateLocation(this);
-            if (tengoPermisoUbicacion()) {
-                Location ultimaPosicionConocida = null;
-                for (String provider : locationManager.getProviders(true)) {
-                    if (Build.VERSION.SDK_INT >= 23 && checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
-                        ultimaPosicionConocida = locationManager.getLastKnownLocation(provider);
-                    if (ultimaPosicionConocida != null) {
-                        actualizaPosicionActual(ultimaPosicionConocida);
-                    }
-                    //Pedir nuevas ubicaciones
-                    locationManager.requestLocationUpdates(provider, 0, 0, detectaPosicion);
-                    break;
-                }
-            } else {
-                // No tengo permiso de ubicación
-            }
         }
 
 
+    }
+
+    public void onResume(){
+        super.onResume();
+        //this will refresh the osmdroid configuration on resuming.
+        //if you make changes to the configuration, use
+        //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        //Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
+        myOpenMapView.onResume(); //needed for compass, my location overlays, v6.0.0 and up
+    }
+
+    public void onPause(){
+        super.onPause();
+        //this will refresh the osmdroid configuration on resuming.
+        //if you make changes to the configuration, use
+        //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        //Configuration.getInstance().save(this, prefs);
+        myOpenMapView.onPause();  //needed for compass, my location overlays, v6.0.0 and up
     }
 
     public void returning(View v){
