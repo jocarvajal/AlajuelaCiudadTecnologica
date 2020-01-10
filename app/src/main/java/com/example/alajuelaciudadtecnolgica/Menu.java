@@ -27,7 +27,7 @@ public class Menu extends AppCompatActivity {
             Menu.this.startActivity(i);
             Menu.this.finish();
         }else{
-            Toast.makeText(Menu.this,"No disponible en modo usuario",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Menu.this,"No disponible en modo invitado",Toast.LENGTH_SHORT).show();
         }
 
     }

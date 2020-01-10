@@ -73,7 +73,7 @@ public class Configuration extends AppCompatActivity {
                         JSONObject jsonAnswer = new JSONObject(response);
                         boolean correct = jsonAnswer.getBoolean("success");
                         if (correct){
-                            Toast.makeText(Configuration.this,"Actualizado correctamente",Toast.LENGTH_SHORT);
+                            Toast.makeText(Configuration.this,"Actualizado correctamente",Toast.LENGTH_SHORT).show();
                             Intent c = new Intent(Configuration.this, Menu.class);
                             Configuration.this.startActivity(c);
                             Configuration.this.finish();
