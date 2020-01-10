@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>GPS device</name>
+    <snippet>Created vie. ene. 3 00:50:39 2020</snippet>
+    <LookAt>
+      <gx:TimeSpan>
+        <begin>2020-01-03T06:44:02Z</begin>
+        <end>2020-01-03T06:49:24Z</end>
+      </gx:TimeSpan>
+      <longitude>-84.217030</longitude>
+      <latitude>10.015580</latitude>
+      <range>1300.000000</range>
+    </LookAt>
+    <!-- Normal waypoint style -->
+    <Style id="waypoint_n">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <!-- Highlighted waypoint style -->
+    <Style id="waypoint_h">
+      <IconStyle>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <StyleMap id="waypoint">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#waypoint_n</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#waypoint_h</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Waypoints</name>
+      <Placemark>
+        <name>001</name>
+        <snippet/>
+        <description>https:/public_html/wp-content/plugins/osm/icons/camping.png</description>
+        <TimeStamp><when>2020-01-03T06:49:24Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-84.216980,10.015920</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Prueba</name>
+        <snippet/>
+        <description>https:/public_html/wp-content/plugins/osm/icons/camping.png</description>
+        <TimeStamp><when>2020-01-03T06:44:02Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-84.217080,10.015240</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
