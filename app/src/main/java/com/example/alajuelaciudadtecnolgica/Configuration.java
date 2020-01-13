@@ -90,7 +90,7 @@ public class Configuration extends AppCompatActivity {
                 }
             };
             String persisted_password;
-            if(doldpass.equals("")){
+            if(dpass.equals("")){
                 persisted_password = actualpass;
             }else{
                 persisted_password = dpass;
