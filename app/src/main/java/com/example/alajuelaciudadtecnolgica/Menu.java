@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class Menu extends AppCompatActivity {
 
-    private String email;
+    private String email, password;
     private boolean guest;
 
     @Override
@@ -18,12 +18,14 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         email = getIntent().getStringExtra("email");
         guest = getIntent().getBooleanExtra("invitado",false);
+        password = getIntent().getStringExtra("contrasena");
     }
 
     public void  config(View v){
         if(!guest){
             Intent i = new Intent(Menu.this, Configuration.class);
             i.putExtra("email",email);
+            i.putExtra("contrasena",password);
             Menu.this.startActivity(i);
             Menu.this.finish();
         }else{

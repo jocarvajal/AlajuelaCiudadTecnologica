@@ -32,7 +32,7 @@ public class Configuration extends AppCompatActivity {
     private EditText newpass;
     private EditText checkpass;
     private CheckBox notifications;
-    private String email;
+    private String email,actualpass;
 
 
     @Override
@@ -41,6 +41,7 @@ public class Configuration extends AppCompatActivity {
         setContentView(R.layout.activity_configuration);
 
         email = getIntent().getStringExtra("email");
+        actualpass = getIntent().getStringExtra("contrasena");
         name = (EditText)findViewById(R.id.edname);
         last1 = (EditText)findViewById(R.id.edlast1);
         last2 = (EditText)findViewById(R.id.edlast2);
@@ -88,7 +89,15 @@ public class Configuration extends AppCompatActivity {
                     }
                 }
             };
-            ConfigRequest r = new ConfigRequest(dname, dlast1, dlast2, ddate, doldpass, dpass, dcheckbox,email, answer);
+            String persisted_password;
+            if(doldpass.equals("")){
+                persisted_password = actualpass;
+            }else{
+                persisted_password = dpass;
+            }
+
+            ConfigRequest r;
+            r = new ConfigRequest(dname, dlast1, dlast2, ddate, doldpass, persisted_password, dcheckbox,email, answer);
             RequestQueue queue = Volley.newRequestQueue(Configuration.this);
             queue.add(r);
         }
