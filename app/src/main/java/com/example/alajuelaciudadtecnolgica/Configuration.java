@@ -25,14 +25,14 @@ import java.util.Date;
 public class Configuration extends AppCompatActivity {
 
     private EditText name;
-    private EditText last1;
-    private EditText last2;
-    private EditText date;
-    private EditText oldpass;
-    private EditText newpass;
-    private EditText checkpass;
+    private EditText last_name_1;
+    private EditText last_name_2;
+    private EditText birthday;
+    private EditText old_password;
+    private EditText new_password;
+    private EditText check_password;
     private CheckBox notifications;
-    private String email,actualpass;
+    private String email,actual_password;
 
 
     @Override
@@ -41,30 +41,30 @@ public class Configuration extends AppCompatActivity {
         setContentView(R.layout.activity_configuration);
 
         email = getIntent().getStringExtra("email");
-        actualpass = getIntent().getStringExtra("contrasena");
+        actual_password = getIntent().getStringExtra("contrasena");
         name = (EditText)findViewById(R.id.edname);
-        last1 = (EditText)findViewById(R.id.edlast1);
-        last2 = (EditText)findViewById(R.id.edlast2);
-        date = (EditText)findViewById(R.id.eddate);
-        oldpass = (EditText)findViewById(R.id.edoldpass);
-        newpass = (EditText)findViewById(R.id.edpass);
-        checkpass = (EditText)findViewById(R.id.edcheckpass);
+        last_name_1 = (EditText)findViewById(R.id.edlast1);
+        last_name_2 = (EditText)findViewById(R.id.edlast2);
+        birthday = (EditText)findViewById(R.id.eddate);
+        old_password = (EditText)findViewById(R.id.edoldpass);
+        new_password = (EditText)findViewById(R.id.edpass);
+        check_password = (EditText)findViewById(R.id.edcheckpass);
         notifications = (CheckBox)findViewById(R.id.cbnoti);
     }
 
     public void update_user(View v)throws Exception{
         SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");
 
-        String dname = name.getText().toString();
-        String dlast1 = last1.getText().toString();
-        String dlast2 = last2.getText().toString();
-        Date ddate = formatter1.parse(date.getText().toString());
-        String doldpass = oldpass.getText().toString();
-        String dpass = newpass.getText().toString();
-        String dcheck_pass = checkpass.getText().toString();
-        Boolean dcheckbox = notifications.isSelected();
+        String name_database = name.getText().toString();
+        String last_name_1_databse = last_name_1.getText().toString();
+        String last_name_2_databse = last_name_2.getText().toString();
+        Date birthday_database = formatter1.parse(birthday.getText().toString());
+        String old_password_database = old_password.getText().toString();
+        String password_database = new_password.getText().toString();
+        String check_password_database = check_password.getText().toString();
+        Boolean checkbox_database = notifications.isSelected();
 
-        if (!dpass.equals(dcheck_pass)){
+        if (!password_database.equals(check_password_database)){
             Toast.makeText(Configuration.this, "No coinciden contraseñas", Toast.LENGTH_SHORT).show();
         }else{
             Response.Listener<String> answer = new Response.Listener<String>(){
@@ -90,14 +90,14 @@ public class Configuration extends AppCompatActivity {
                 }
             };
             String persisted_password;
-            if(dpass.equals("")){
-                persisted_password = actualpass;
+            if(password_database.equals("")){
+                persisted_password = actual_password;
             }else{
-                persisted_password = dpass;
+                persisted_password = password_database;
             }
 
             ConfigRequest r;
-            r = new ConfigRequest(dname, dlast1, dlast2, ddate, doldpass, persisted_password, dcheckbox,email, answer);
+            r = new ConfigRequest(name_database, last_name_1_databse, last_name_2_databse, birthday_database, old_password_database, persisted_password, checkbox_database,email, answer);
             RequestQueue queue = Volley.newRequestQueue(Configuration.this);
             queue.add(r);
         }

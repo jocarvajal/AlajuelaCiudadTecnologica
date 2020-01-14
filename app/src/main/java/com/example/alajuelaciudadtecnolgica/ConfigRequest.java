@@ -13,7 +13,7 @@ public class ConfigRequest extends StringRequest{
     private static final String route = "https://ciudadtecnologicaalajuela.000webhostapp.com/configuration.php";
     private Map<String, String> parameters;
 
-    public ConfigRequest(String name, String last1, String last2, Date date,String oldpass, String pass,Boolean notifications,String email, Response.Listener<String> listener){
+    public ConfigRequest(String name, String last_name_1, String last_name_2, Date birthday,String old_password, String password,Boolean notifications,String email, Response.Listener<String> listener){
         super(Method.POST, route, listener, null);
         int not;
         if(notifications){
@@ -23,11 +23,11 @@ public class ConfigRequest extends StringRequest{
         }
         parameters = new HashMap<>();
         parameters.put("nombre",name + "");
-        parameters.put("apellido1",last1 + "");
-        parameters.put("apellido2",last2 + "");
-        parameters.put("fecha_nacimiento",date + "");
-        parameters.put("contrasena_vieja",oldpass + "");
-        parameters.put("contrasena",pass + "");
+        parameters.put("apellido1",last_name_1 + "");
+        parameters.put("apellido2",last_name_2 + "");
+        parameters.put("fecha_nacimiento",birthday + "");
+        parameters.put("contrasena_vieja",old_password + "");
+        parameters.put("contrasena",password + "");
         parameters.put("notificaciones",not + "");
         parameters.put("correo",email + "");
 

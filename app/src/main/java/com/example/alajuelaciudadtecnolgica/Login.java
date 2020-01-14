@@ -18,8 +18,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Login extends AppCompatActivity {
-    private EditText edemail ;
-    private EditText edpassword;
+    private EditText email_database ;
+    private EditText password_database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,8 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView register = (TextView)findViewById(R.id.tregister);
         TextView guest = (TextView)findViewById(R.id.tinvi);
-        edemail = (EditText)findViewById(R.id.edmail);
-        edpassword = (EditText)findViewById(R.id.edpass);
+        email_database = (EditText)findViewById(R.id.edmail);
+        password_database = (EditText)findViewById(R.id.edpass);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,8 +49,8 @@ public class Login extends AppCompatActivity {
     }
 
     public void startSession(View v){
-        String user = edemail.getText().toString();
-        String password = edpassword.getText().toString();
+        String user = email_database.getText().toString();
+        String password = password_database.getText().toString();
         Response.Listener<String> answer = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -60,8 +60,8 @@ public class Login extends AppCompatActivity {
                     if(ok){
                         Intent menu = new Intent(Login.this, Menu.class);
                         menu.putExtra("invitado",false);
-                        menu.putExtra("email",edemail.getText().toString());
-                        menu.putExtra("contrasena",edpassword.getText().toString());
+                        menu.putExtra("email",email_database.getText().toString());
+                        menu.putExtra("contrasena",password_database.getText().toString());
                         Login.this.startActivity(menu);
                         Login.this.finish();
                     }else{

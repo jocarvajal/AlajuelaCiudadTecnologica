@@ -28,12 +28,12 @@ import java.util.regex.Pattern;
 public class Register extends AppCompatActivity {
 
     private EditText name;
-    private EditText last1;
-    private EditText last2;
-    private EditText date;
+    private EditText last_name_1;
+    private EditText last_name_2;
+    private EditText birthday;
     private EditText email;
-    private EditText pass;
-    private EditText check_pass;
+    private EditText password;
+    private EditText check_password;
     private Button btn_register;
     private Button btn_back;
     private CheckBox notifications;
@@ -44,12 +44,12 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         name = (EditText)findViewById(R.id.edname);
-        last1 = (EditText)findViewById(R.id.edlast1);
-        last2 = (EditText)findViewById(R.id.edlast2);
-        date = (EditText)findViewById(R.id.eddate);
+        last_name_1 = (EditText)findViewById(R.id.edlast1);
+        last_name_2 = (EditText)findViewById(R.id.edlast2);
+        birthday = (EditText)findViewById(R.id.eddate);
         email = (EditText)findViewById(R.id.edmail);
-        pass = (EditText)findViewById(R.id.edpass);
-        check_pass = (EditText)findViewById(R.id.edcheckpass);
+        password = (EditText)findViewById(R.id.edpass);
+        check_password = (EditText)findViewById(R.id.edcheckpass);
         btn_register = (Button)findViewById(R.id.btnacept);
         btn_back = (Button)findViewById(R.id.btnback);
         notifications = (CheckBox)findViewById(R.id.cbnoti);
@@ -62,18 +62,18 @@ public class Register extends AppCompatActivity {
     public void create_user(View v)throws Exception{
         SimpleDateFormat formatter1=new SimpleDateFormat("dd/MM/yyyy");
 
-        String dname = name.getText().toString();
-        String dlast1 = last1.getText().toString();
-        String dlast2 = last2.getText().toString();
-        Date ddate = formatter1.parse(date.getText().toString());
-        String demail = email.getText().toString();
-        String dpass = pass.getText().toString();
-        String dcheck_pass = check_pass.getText().toString();
-        Boolean dcheckbox = notifications.isSelected();
+        String name_database = name.getText().toString();
+        String last_name_1_database = last_name_1.getText().toString();
+        String last_name_2_database = last_name_2.getText().toString();
+        Date birthday_database = formatter1.parse(birthday.getText().toString());
+        String email_database = email.getText().toString();
+        String password_database = password.getText().toString();
+        String check_password_database = check_password.getText().toString();
+        Boolean checkbox_database = notifications.isSelected();
 
-        Matcher matcher = pattern.matcher(demail);
+        Matcher matcher = pattern.matcher(email_database);
 
-        if (!dpass.equals(dcheck_pass)){
+        if (!password_database.equals(check_password_database)){
             Toast.makeText(Register.this, "No coinciden contraseñas", Toast.LENGTH_SHORT).show();
         }else if(!matcher.find()){
             Toast.makeText(Register.this, "Formato de correo incorrecto", Toast.LENGTH_SHORT).show();
@@ -100,7 +100,7 @@ public class Register extends AppCompatActivity {
                     }
                 }
             };
-            RegisterRequest r = new RegisterRequest(dname, dlast1, dlast2, ddate, demail, dpass, dcheckbox, answer);
+            RegisterRequest r = new RegisterRequest(name_database, last_name_1_database, last_name_2_database, birthday_database, email_database, password_database, checkbox_database, answer);
             RequestQueue queue = Volley.newRequestQueue(Register.this);
             queue.add(r);
         }
