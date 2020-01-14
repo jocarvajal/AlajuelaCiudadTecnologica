@@ -37,30 +37,35 @@ public class Menu extends AppCompatActivity {
 
     public void  show_bus(View v){
         Intent i = new Intent(Menu.this, ShowMap.class);
+        i.putExtra("Type", "BusStops");
         Menu.this.startActivity(i);
         Menu.this.finish();
     }
 
     public void  show_local(View v){
         Intent i = new Intent(Menu.this, ShowMap.class);
+        i.putExtra("Type", "Local");
         Menu.this.startActivity(i);
         Menu.this.finish();
     }
 
     public void  show_turist(View v){
         Intent i = new Intent(Menu.this, ShowMap.class);
+        i.putExtra("Type", "Tourism");
         Menu.this.startActivity(i);
         Menu.this.finish();
     }
 
     public void  show_all(View v){
         Intent i = new Intent(Menu.this, ShowMap.class);
+        i.putExtra("Type", "All");
         Menu.this.startActivity(i);
         Menu.this.finish();
     }
 
     public void  show_institutions(View v){
         Intent i = new Intent(Menu.this, ShowMap.class);
+        i.putExtra("Type", "Institutions");
         Menu.this.startActivity(i);
         Menu.this.finish();
     }

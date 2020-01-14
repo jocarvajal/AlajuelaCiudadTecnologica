@@ -3,10 +3,12 @@ package com.example.alajuelaciudadtecnolgica;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.VoiceInteractor;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.os.Build;
@@ -19,6 +21,7 @@ import  androidx.core.content.res.ResourcesCompat;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
 import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
+import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
@@ -29,6 +32,9 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import android.preference.PreferenceManager;
+
+import com.example.alajuelaciudadtecnolgica.StoredPoints.BusStops;
+
 import org.osmdroid.config.Configuration;
 
 public class ShowMap extends AppCompatActivity {
@@ -43,13 +49,11 @@ public class ShowMap extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_map);
+        String option = getIntent().getStringExtra("Type");
         Context ctx = getApplicationContext();
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
         if (tengoPermisoEscritura()){
-
-
-            //setting this before the layout is inflated is a good idea
-            GeoPoint alajuela = new GeoPoint(10.0162497, -84.2116318);
+            GeoPoint alajuela = new GeoPoint(10.0164, -84.2138);
 
             myOpenMapView = (MapView) findViewById(R.id.openmapview);
             myOpenMapView.setTileSource(TileSourceFactory.MAPNIK);
@@ -58,12 +62,29 @@ public class ShowMap extends AppCompatActivity {
 
             myMapController = (MapController)myOpenMapView.getController();
             myMapController.setCenter(alajuela);
-            myMapController.setZoom(9.5);
+            myMapController.setZoom(17);
 
+            RequestPointsData requestPointsData = new RequestPointsData(myOpenMapView, ctx);
 
+            if (option.equals("BusStops")){
+                ArrayList<Marker> busMarkers = requestPointsData.getBusStops();
+                setMarkers(busMarkers);
+            }else if (option.equals("Institutions")){
+                ArrayList<Marker> institutionsMarkers = requestPointsData.getInstitutions();
+                setMarkers(institutionsMarkers);
+            }else if (option.equals("Tourism")){
+                ItemizedOverlayWithFocus<OverlayItem> tourism = requestPointsData.getTourism();
+                myOpenMapView.getOverlays().add(tourism);
+            }else if (option.equals("Local")){
+                ItemizedOverlayWithFocus<OverlayItem> locals = requestPointsData.getLocals();
+                myOpenMapView.getOverlays().add(locals);
+            }else if (option.equals("All")){
+                setMarkers(requestPointsData.getBusStops());
+                setMarkers(requestPointsData.getInstitutions());
+                myOpenMapView.getOverlays().add(requestPointsData.getLocals());
+                myOpenMapView.getOverlays().add(requestPointsData.getTourism());
+            }
         }
-
-
     }
 
     public void onResume(){
@@ -144,5 +165,13 @@ public class ShowMap extends AppCompatActivity {
         ItemizedOverlayWithFocus<OverlayItem> capa = new ItemizedOverlayWithFocus<>(this, puntos, tap);
         capa.setFocusItemsOnTap(true);
         myOpenMapView.getOverlays().add(capa);
+    }
+
+    private void setMarkers(ArrayList<Marker> markers){
+        int arraySize = markers.size();
+
+        for (int i = 0; i < arraySize; i++){
+            myOpenMapView.getOverlays().add(markers.get(i));
+        }
     }
 }
