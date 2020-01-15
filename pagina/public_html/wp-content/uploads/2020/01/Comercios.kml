@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>GPS device</name>
+    <snippet>Created dom. ene. 12 14:26:39 2020</snippet>
+    <LookAt>
+      <gx:TimeSpan>
+        <begin>2020-01-10T20:51:33Z</begin>
+        <end>2020-01-10T20:53:44Z</end>
+      </gx:TimeSpan>
+      <longitude>-84.212414</longitude>
+      <latitude>10.010898</latitude>
+      <range>1515.320594</range>
+    </LookAt>
+    <!-- Normal waypoint style -->
+    <Style id="waypoint_n">
+      <IconStyle>
+      <scale>0.06</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/citymall.jpg</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <!-- Highlighted waypoint style -->
+    <Style id="waypoint_h">
+      <IconStyle>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal4/icon61.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <StyleMap id="waypoint">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#waypoint_n</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#waypoint_h</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Waypoints</name>
+      <Placemark>
+        <name>City Mall</name>
+        <snippet/>
+        <description>Ubicado en la provincia de Alajuela , es el mall m&#xe1;s grande de la regi&#xf3;n construido en una sola etapa.</description>
+        <TimeStamp><when>2020-01-10T20:53:44Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-84.211350,10.005769</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>McDonalds Parque Central</name>
+        <snippet/>
+        <description>Somos una de las principales compa&#xf1;&#xed;as de servicio r&#xe1;pido de la alimentaci&#xf3;n en el pa&#xed;s.</description>
+        <TimeStamp><when>2020-01-10T20:51:33Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-84.213479,10.016028</coordinates>
+        </Point>
+        <Style id="waypoint_h">
+        <IconStyle>
+      <scale>0.1</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/McAlajuelaCentro.jpg</href>
+        </Icon>
+      </IconStyle>
+      </Style>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

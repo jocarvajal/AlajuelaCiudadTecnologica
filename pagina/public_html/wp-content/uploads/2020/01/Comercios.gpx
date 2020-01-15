@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<gpx version="1.0"
+creator="Viking 1.7 -- http://viking.sf.net/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.topografix.com/GPX/1/0"
+xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+  <name>Comercios </name>
+  <time>2020-01-10T20:51:08.004184Z</time>
+<wpt lat="10.005769" lon="-84.21135">
+  <time>2020-01-10T20:53:44Z</time>
+  <name>City Mall</name>
+  <desc>Ubicado en la provincia de Alajuela , es el mall m&#xe1;s grande de la regi&#xf3;n construido en una sola etapa.
+  <a href="https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/citymall.jpg">Ver aquí</a></desc>
+  
+</wpt>
+<wpt lat="10.016028" lon="-84.213479">
+  <time>2020-01-10T20:51:33Z</time>
+  <name>McDonalds Parque Central</name>
+  <desc>Somos una de las principales compa&#xf1;&#xed;as de servicio r&#xe1;pido de la alimentaci&#xf3;n en el pa&#xed;s.</desc>
+  <link href="https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/McAlajuelaCentro.jpg">Ver aquí</link>
+</wpt>
+</gpx>

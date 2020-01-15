@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<gpx version="1.0"
+creator="Viking 1.7 -- http://viking.sf.net/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.topografix.com/GPX/1/0"
+xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+  <name>TrackWaypoint</name>
+  <time>2020-01-10T02:01:13.054782Z</time>
+<wpt lat="10.008352" lon="-84.210552">
+  <time>2020-01-10T02:20:03Z</time>
+  <name>Hospital San Rafael de Alajuela</name>
+  <desc>El Hospital San Rafael de Alajuela es un centro m&#xe9;dico de la Caja Costarricense del Seguro Social de Costa Rica fundado en 1883. Est&#xe1; localizado en la ciudad de Alajuela, 2 km al norte del Aeropuerto Internacional Juan Santamar&#xed;a</desc>
+  <link href="https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/Hospital_San_Rafael.jpg"/>
+  
+</wpt>
+<wpt lat="10.017248" lon="-84.210196">
+  <time>2020-01-10T17:52:58Z</time>
+  <name>Municipalidad de Alajuela </name>
+  <desc>En la Municipalidad de Alajuela concebimos la transparencia activa como aquella que permite el estimular el uso y reutilizaci&#xf3;n de la informaci&#xf3;n, por parte de la ciudadan&#xed;a, proporcionando una materia prima para enriquecer el debate p&#xfa;blico y los procesos participativos, contribuyendo as&#xed; en la promoci&#xf3;n del acceso a la informaci&#xf3;n a trav&#xe9;s del dise&#xf1;o y de la implementaci&#xf3;n de sistemas o mecanismos de acceso en forma de datos abiertos.</desc>
+  <link href="https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/webmuni.jpg"/>
+  
+</wpt>
+</gpx>

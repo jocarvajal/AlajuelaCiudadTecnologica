@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>GPS device</name>
+    <snippet>Created dom. ene. 12 13:28:42 2020</snippet>
+    <LookAt>
+      <gx:TimeSpan>
+        <begin>2020-01-10T21:10:18Z</begin>
+        <end>2020-01-10T21:14:29Z</end>
+      </gx:TimeSpan>
+      <longitude>-84.208754</longitude>
+      <latitude>10.006673</latitude>
+      <range>2693.077889</range>
+    </LookAt>
+    <!-- Normal waypoint style -->
+    <Style id="waypoint_n">
+      <IconStyle>
+        <scale>0.05</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/aeropuertojuansantamaria.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <!-- Highlighted waypoint style -->
+    <Style id="waypoint_h">
+      <IconStyle>
+        <scale>0.05</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/juansantamaria.jpg</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <StyleMap id="waypoint">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#waypoint_n</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#waypoint_h</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Waypoints</name>
+      <Placemark>
+        <name>Aeropuerto Juan Santamaría</name>
+        <snippet/>
+        <description>Es el aeropuerto principal que presta servicios a San Jos&#xe9;, la capital de Costa Rica. El aeropuerto est&#xe1; ubicado a 2 km Sur de la ciudad de Alajuela, y a 17 km al oeste del centro de San Jos&#xe9;.</description>
+        <TimeStamp><when>2020-01-10T21:14:29Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-84.204092,9.998579</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parque Juan Santamaría</name>
+        <snippet/>
+        <description>Uno de los grandes iconos hist&#xf3;ricos de Costa Rica fue Juan Santarmar&#xed;a y un lugar de referencia dentro de la ciudad de Alajuela es el parque Juan Santamar&#xed;a, un lugar que se fund&#xf3; con el objetivo de homenajear a uno de los h&#xe9;roes nacionales m&#xe1;s relevantes del pa&#xed;s, justo en la Avenida 2 y a pocos minutos de la plaza del Benem&#xe9;rito General Guardia, con posibilidad de encontrar restaurantes alrededor del parque a pocos minutos.</description>
+        <TimeStamp><when>2020-01-10T21:10:18Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-84.213415,10.014766</coordinates>
+        </Point>
+        <!-- Highlighted waypoint style -->
+    <Style id="waypoint_h">
+      <IconStyle>
+        <scale>0.1</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/juansantamaria.jpg</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

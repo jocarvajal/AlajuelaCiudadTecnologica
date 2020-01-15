@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<gpx version="1.0"
+creator="Viking 1.7 -- http://viking.sf.net/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.topografix.com/GPX/1/0"
+xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+  <name>Turismo</name>
+  <time>2020-01-10T21:08:17.178087Z</time>
+<wpt lat="9.998579" lon="-84.204092">
+  <time>2020-01-10T21:14:29Z</time>
+  <name>Aeropuerto Juan Santamar&#xed;a</name>
+  <desc>Es el aeropuerto principal que presta servicios a San Jos&#xe9;, la capital de Costa Rica. El aeropuerto est&#xe1; ubicado a 2 km Sur de la ciudad de Alajuela, y a 17 km al oeste del centro de San Jos&#xe9;.</desc>
+  <link href="https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/aeropuertojuansantamaria.png"></link>
+</wpt>
+<wpt lat="10.014766" lon="-84.213415">
+  <time>2020-01-10T21:10:18Z</time>
+  <name>Parque Juan Santamar&#xed;a</name>
+  <desc>Un lugar que se fund&#xf3; con el objetivo de homenajear a uno de los h&#xe9;roes nacionales m&#xe1;s relevantes del pa&#xed;s, justo en la Avenida 2 y a pocos minutos de la plaza del Benem&#xe9;rito General Guardi.</desc>
+  <link href="https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/juansantamaria.jpg"></link>
+</wpt>
+</gpx>

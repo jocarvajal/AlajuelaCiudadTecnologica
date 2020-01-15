@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>GPS device</name>
+    <snippet>Created dom. ene. 12 14:23:07 2020</snippet>
+    <LookAt>
+      <gx:TimeSpan>
+        <begin>2020-01-10T21:40:27Z</begin>
+        <end>2020-01-10T21:40:27Z</end>
+      </gx:TimeSpan>
+      <longitude>-84.218897</longitude>
+      <latitude>10.016937</latitude>
+      <range>1300.000000</range>
+    </LookAt>
+    <!-- Normal waypoint style -->
+    <Style id="waypoint_n">
+      <IconStyle>
+      <scale>0.06</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/cementerio_general.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <!-- Highlighted waypoint style -->
+    <Style id="waypoint_h">
+      <IconStyle>
+        <scale>0.05</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/cementerio_general.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <StyleMap id="waypoint">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#waypoint_n</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#waypoint_h</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Waypoints</name>
+      <Placemark>
+        <name>Cementerio General</name>
+        <snippet/>
+        <description>Mo-Fr 05:00-22:40; Sa 05:00-22:40; Su 06:00-22:40</description>
+        <TimeStamp><when>2020-01-10T21:40:27Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-84.218897,10.016937</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

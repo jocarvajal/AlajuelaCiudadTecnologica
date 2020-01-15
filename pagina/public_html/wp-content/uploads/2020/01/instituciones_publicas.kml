@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>GPS device</name>
+    <snippet>Created vie. ene. 10 11:55:20 2020</snippet>
+    <LookAt>
+      <gx:TimeSpan>
+        <begin>2020-01-10T02:20:03Z</begin>
+        <end>2020-01-10T17:52:58Z</end>
+      </gx:TimeSpan>
+      <longitude>-84.210374</longitude>
+      <latitude>10.012800</latitude>
+      <range>1300.000000</range>
+    </LookAt>
+    <!-- Normal waypoint style -->
+    <Style id="waypoint_n">
+      <IconStyle>
+      <scale>0.05</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/Hospital_San_Rafael.jpg</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <!-- Highlighted waypoint style -->
+    <Style id="waypoint_h">
+      <IconStyle>
+        <scale>1.2</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/plugins/osm/icons/mic_black_building_10.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <StyleMap id="waypoint">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#waypoint_n</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#waypoint_h</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Waypoints</name>
+      <Placemark>
+        <name>Hospital San Rafael de Alajuela</name>
+        <snippet/>
+        <description>El Hospital San Rafael de Alajuela es un centro m&#xe9;dico de la Caja Costarricense del Seguro Social de Costa Rica fundado en 1883. Est&#xe1; localizado en la ciudad de Alajuela, 2 km al norte del Aeropuerto Internacional Juan Santamar&#xed;a</description>
+        <TimeStamp><when>2020-01-10T02:20:03Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-84.210552,10.008352</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Municipalidad de Alajuela</name>
+        <snippet/>
+        <description>En la Municipalidad de Alajuela concebimos la transparencia activa como aquella que permite el estimular el uso y reutilizaci&#xf3;n de la informaci&#xf3;n, por parte de la ciudadan&#xed;a, proporcionando una materia prima para enriquecer el debate p&#xfa;blico y los procesos participativos, contribuyendo as&#xed; en la promoci&#xf3;n del acceso a la informaci&#xf3;n a trav&#xe9;s del dise&#xf1;o y de la implementaci&#xf3;n de sistemas o mecanismos de acceso en forma de datos abiertos.</description>
+        <TimeStamp><when>2020-01-10T17:52:58Z</when></TimeStamp>
+        <styleUrl>#waypoint</styleUrl>
+        <Point>
+          <coordinates>-84.210196,10.017248</coordinates>
+        </Point>
+        <Style id="waypoint_h">
+      <IconStyle>
+      <scale>0.1</scale>
+        <Icon>
+          <href>https://ciudadtecnologicaalajuela.000webhostapp.com/wp-content/uploads/2020/images/webmuni.jpg</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
