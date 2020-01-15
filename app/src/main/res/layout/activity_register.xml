@@ -1,55 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D00D0D0E"
+    android:orientation="vertical"
     tools:context=".Register">
-
-    <Button
-        android:id="@+id/btnacept"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="-18dp"
-        android:layout_marginLeft="-18dp"
-        android:layout_marginBottom="65dp"
-        android:onClick="create_user"
-        android:text="Crear usuario" />
-
-    <Button
-        android:id="@+id/btnback"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="18dp"
-        android:onClick="returning"
-        android:text="Regresar" />
 
     <EditText
         android:id="@+id/edname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="3dp"
         android:ems="10"
         android:hint="Nombre"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"/>
 
     <EditText
         android:id="@+id/edlast1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="3dp"
         android:ems="10"
         android:hint="Primer apellido"
         android:inputType="textPersonName" />
@@ -58,9 +38,11 @@
         android:id="@+id/edlast2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="147dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="3dp"
         android:ems="10"
         android:hint="Segundo apellido"
         android:inputType="textPersonName" />
@@ -69,12 +51,11 @@
         android:id="@+id/eddate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="202dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="3dp"
         android:ems="10"
         android:hint="Fecha de nacimiento"
         android:inputType="date|textShortMessage" />
@@ -83,10 +64,11 @@
         android:id="@+id/edmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="303dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="3dp"
         android:ems="10"
         android:hint="Correo electrónico"
         android:inputType="textEmailAddress" />
@@ -95,15 +77,11 @@
         android:id="@+id/edpass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/edcheckpass"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginEnd="-9dp"
-        android:layout_marginBottom="5dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="3dp"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword" />
@@ -112,10 +90,11 @@
         android:id="@+id/edcheckpass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="197dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="3dp"
         android:ems="10"
         android:hint="Verificar contraseña"
         android:inputType="textPassword" />
@@ -123,9 +102,33 @@
     <CheckBox
         android:id="@+id/cbnoti"
         android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="3dp"
         android:layout_height="73dp"
-        android:layout_above="@+id/btnacept"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="5dp"
         android:text="@string/deseo_recibir_notificacaiones_sobre_noticias_recientes" />
-</RelativeLayout>
+
+    <Button
+        android:id="@+id/btnacept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingRight="25dp"
+        android:paddingLeft="25dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="create_user"
+        android:text="Crear usuario"/>
+
+    <Button
+        android:id="@+id/btnback"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
+        android:onClick="returning"
+        android:text="Regresar"/>
+
+</LinearLayout>
